@@ -1,0 +1,28 @@
+[
+  {
+    "academic": "Homo sapiens",
+    "names": {
+      "ja": "ヒト",
+      "en": "human"
+    },
+    "biometrix": {
+      "heartbeat": {
+        "min": 60,
+        "max": 70
+      }
+    }
+  },
+  {
+    "academic": "Canis familius",
+    "names": {
+      "ja": "ネコ",
+      "en": "cat"
+    },
+    "biometrix": {
+      "heartbeat": {
+        "min": 100,
+        "max": 130
+      }
+    }
+  }
+]

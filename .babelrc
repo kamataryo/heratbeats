@@ -1,0 +1,43 @@
+{
+  "presets": ["react", "env", "es2015", "stage-0", "stage-2"],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-runtime",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-function-bind",
+    "styled-components"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    },
+    "development": {
+      "plugins": [
+        [
+          "react-transform",
+          {
+            "transforms": [
+              {
+                "transform": "react-transform-hmr",
+                "imports": ["react"],
+                "locals": ["module"]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "remove",
+            "ignoreFilenames": ["node_modules"]
+          }
+        ]
+      ]
+    }
+  }
+}
