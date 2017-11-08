@@ -11,8 +11,7 @@
     "lint": "npm run lint:style && npm run lint:es",
     "lint:style": "stylelint  './src/**/*.js' './src/**/*.jsx'",
     "lint:es": "eslint --cache --ext=jsx --ext=js .",
-    "lint:prettier":
-      "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",
+    "lint:prettier": "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -20,6 +19,7 @@
     "immutability-helper": "^2.4.0",
     "prop-types": "^15.6.0",
     "react": "15.6.2",
+    "react-animations": "^1.0.0",
     "react-dom": "15.6.2",
     "react-redux": "^5.0.5",
     "react-router": "^4.2.0",
@@ -96,11 +96,21 @@
     "webpack-dev-server": "^2.9.1"
   },
   "lint-staged": {
-    "*.{js,jsx,json}": ["prettier --write", "git add"]
+    "*.{js,jsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "nyc": {
-    "include": ["src/*.js", "src/*.jsx", "src/**/*.js", "src/**/*.jsx"],
-    "require": ["babel-register"],
+    "include": [
+      "src/*.js",
+      "src/*.jsx",
+      "src/**/*.js",
+      "src/**/*.jsx"
+    ],
+    "require": [
+      "babel-register"
+    ],
     "sourceMap": false,
     "instrument": false
   }

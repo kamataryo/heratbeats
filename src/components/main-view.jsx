@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import Hearbeat from './heartbeat'
+
 /**
  * map state To Props
  * @param  {[type]} state [description]
@@ -21,7 +23,7 @@ export default class MainView extends React.Component {
    */
   static propTypes = {
     // stateProps
-    animals: PropTypes.object.isRequired,
+    animals: PropTypes.array.isRequired,
   }
 
   /**
@@ -39,6 +41,17 @@ export default class MainView extends React.Component {
    */
   render() {
     const { animals } = this.props
-    return <div>{JSON.stringify(animals)}</div>
+    return (
+      <div>
+        {animals.map(animal => (
+          <dl key={ animal.academic }>
+            <dt>{animal.names.en}</dt>
+            <dd>
+              <Hearbeat { ...animal.biometrix.heartbeat } />
+            </dd>
+          </dl>
+        ))}
+      </div>
+    )
   }
 }
