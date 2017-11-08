@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-
-import Hearbeat from './heartbeat'
+import Hearbeat from '../heartbeat'
+import { MainTitle, AnimalsWrap } from './styled'
 
 /**
  * map state To Props
- * @param  {[type]} state [description]
- * @return {[type]}       [description]
+ * @param  {object} state state props
+ * @return {object}       object props
  */
 const mapStateToProps = state => {
   return {
@@ -43,14 +43,17 @@ export default class MainView extends React.Component {
     const { animals } = this.props
     return (
       <div>
-        {animals.map(animal => (
-          <dl key={ animal.academic }>
-            <dt>{animal.names.en}</dt>
-            <dd>
-              <Hearbeat { ...animal.biometrix.heartbeat } />
-            </dd>
-          </dl>
-        ))}
+        <MainTitle>{'Heartbeats visualization of vertebrate'}</MainTitle>
+        <AnimalsWrap>
+          {animals.map(animal => (
+            <dl key={ animal.academic }>
+              <dt>{animal.names.ja}</dt>
+              <dd>
+                <Hearbeat { ...animal.biometrix.heartbeat } />
+              </dd>
+            </dl>
+          ))}
+        </AnimalsWrap>
       </div>
     )
   }

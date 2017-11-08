@@ -6,44 +6,52 @@ import styled, { keyframes } from 'styled-components'
 const afterTransition = keyframes`
 0%,
 100% {
-  background-color: red;
-  border-radius: 50px 50px 0 0;
-}
-50%  {
-  left: 50px;
+  left: -25px;
   top: 0;
   width: 50px;
   height: 80px;
   background-color: orange;
-  border-radius: 25px 25px 0 0;
+  border-radius: 50px 50px 0 0;
+}
+50%  {
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 40px;
+  background-color: red;
+  border-radius: 12.5px 12.5px 0 0;
 }
 `
 
 const beforeTransition = keyframes`
   0%,
   100% {
-    background-color: red;
-    border-radius: 50px 50px 0 0;
-  }
-  50%  {
-    left: 50px;
+    left: 25px;
     top: 0;
     width: 50px;
     height: 80px;
     background-color: orange;
     border-radius: 25px 25px 0 0;
+  }
+  50%  {
+    left: 25px;
+    top: 0;
+    width: 25px;
+    height: 40px;
+    background-color: red;
+    border-radius: 12.5px 12.5px 0 0;
   }  
 `
 
 const Heart = styled.div`
   position: relative;
   width: 100px;
-  height: 90px;
+  height: 80px;
 
   &::before {
     animation-name: ${beforeTransition};
     animation-duration ${props => 60 / props.perMin}s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: 1, 0, 0, 1;
     animation-iteration-count: infinite;
     
     content: '';
@@ -54,14 +62,8 @@ const Heart = styled.div`
   &::after {
     animation-name: ${afterTransition};
     animation-duration ${props => 60 / props.perMin}s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    
+    animation-timing-function: 1, 0, 0, 1;
+    animation-iteration-count: infinite; 
     content: '';
     position: absolute;
     transform: rotate(45deg);
