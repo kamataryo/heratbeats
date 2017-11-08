@@ -82,7 +82,10 @@ export default {
     }),
 
     // アセットファイルをコピー
-    new CopyWebpackPlugin([{ from: './public/assets', to: 'assets' }]),
+    new CopyWebpackPlugin([
+      { from: './public/assets', to: 'assets' },
+      { from: './_redirects', to: path.join(__dirname, '/dist') },
+    ]),
 
     // メタ情報をグローバル変数として埋め込む
     // metaReducerに入れるので、そこから使う
