@@ -14,12 +14,6 @@ SPLIT='=================================================='
 
 echo ${SPLIT}
 
-git diff-index --quiet HEAD -- || (
-  echo -e "${FATAL} Uncommit change is found. Please commit at first." &&
-  echo ${SPLIT} &&
-  exit 1
-)
-
 if [[ $NODE_ENV == '' ]]; then
   echo -e "${INFO} ${RED}NODE_ENV${NC}=${WHITE}production${NC} ${GREEN}[default]${NC}"
   NODE_ENV=production
