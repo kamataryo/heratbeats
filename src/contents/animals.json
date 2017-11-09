@@ -1,6 +1,6 @@
 [
   {
-    "academic": "(some-whale)",
+    "academic": "(whale-not-specified)",
     "names": {
       "ja": "クジラ",
       "en": "whale"
@@ -73,6 +73,32 @@
     }
   },
   {
+    "academic": "Tamias sibiricus",
+    "names": {
+      "ja": "シマリス",
+      "en": "Tamias sibiricus"
+    },
+    "biometrix": {
+      "heart": {
+        "bpm": 400
+      }
+    },
+    "activity": "normal"
+  },
+  {
+    "academic": "Tamias sibiricus",
+    "names": {
+      "ja": "シマリス (冬眠中)",
+      "en": "Tamias sibiricus (hybernation)"
+    },
+    "biometrix": {
+      "heart": {
+        "bpm": 10
+      }
+    },
+    "activity": "hybernation"
+  },
+  {
     "academic": "Sorex minutus",
     "names": {
       "ja": "ヨーロッパヒメトガリネズミ",
@@ -85,10 +111,10 @@
     }
   },
   {
-    "academic": "(some-octopus)",
+    "academic": "(octopus-not-specified)",
     "names": {
       "ja": "タコ",
-      "en": "octpus"
+      "en": "octopus"
     },
     "biometrix": {
       "heart": {
