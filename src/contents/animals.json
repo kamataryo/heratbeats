@@ -1,6 +1,6 @@
 [
   {
-    "academic": "",
+    "academic": "(some-whale)",
     "names": {
       "ja": "クジラ",
       "en": "whale"
@@ -84,7 +84,7 @@
     }
   },
   {
-    "academic": "",
+    "academic": "(some-octopus)",
     "names": {
       "ja": "タコ",
       "en": "octpus"
@@ -93,6 +93,9 @@
       "heart": {
         "bpm": 50,
         "count": 3
+      },
+      "blood": {
+        "haemType": "myo"
       }
     }
   }

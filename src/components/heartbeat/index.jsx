@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import update from 'immutability-helper'
-import { Heart } from './styled'
+import { Heart, HeartbeatsWrap as _HeartbeatsWrap } from './styled'
+
+export const HeartbeatsWrap = _HeartbeatsWrap
 
 /**
  * render beating heart
@@ -21,6 +23,16 @@ export default class Hearbeat extends React.Component {
         max: PropTypes.number.isRequired,
       }),
     ]).isRequired,
+    delay: PropTypes.number,
+    bloodHaemType: PropTypes.oneOf(['myo', 'hem']).isRequired,
+  }
+
+  /**
+   * defaultProps
+   * @type {object}
+   */
+  static defaultProps = {
+    delay: 0,
   }
 
   /**
@@ -84,12 +96,12 @@ export default class Hearbeat extends React.Component {
    */
   render() {
     // const { counter } = this.state
-    const { bpm } = this.props
+    const { bpm, delay, bloodHaemType } = this.props
     const bpmAve = typeof bpm === 'number' ? bpm : (bpm.min + bpm.max) / 2
 
     return (
       <div>
-        <Heart perMin={ bpmAve } />
+        <Heart perMin={ bpmAve } delay={ delay } bloodHaemType={ bloodHaemType } />
       </div>
     )
   }

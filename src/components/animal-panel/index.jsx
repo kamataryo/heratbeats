@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Hearbeat from '../heartbeat'
+import Hearbeat, { HeartbeatsWrap } from '../heartbeat'
 import { Panel, Presentable, Dl, Academic } from './styled'
 
 /**
@@ -23,7 +23,7 @@ export default class AnimalPanel extends React.Component {
    */
   constructor(props) {
     super(props)
-    this.state = { display: false }
+    this.state = { isHovered: false }
     this.onShowEvent = this::this.onShowEvent
     this.onHideEvent = this::this.onHideEvent
   }
@@ -38,19 +38,22 @@ export default class AnimalPanel extends React.Component {
     return true
   }
 
-  onShowEvent = () => this.setState({ display: true })
-  onHideEvent = () => this.setState({ display: false })
+  onShowEvent = () => this.setState({ isHovered: true })
+  onHideEvent = () => this.setState({ isHovered: false })
 
   /**
    * render
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
-    const { display } = this.state
+    const { isHovered } = this.state
     const {
       animal: {
         academic,
-        biometrix: { heart: { bpm } },
+        biometrix: {
+          heart: { bpm, count = 1 },
+          blood: { haemType = 'hem' } = {},
+        },
         names: { ja: jaName, en: enName },
       },
     } = this.props
@@ -58,8 +61,19 @@ export default class AnimalPanel extends React.Component {
 
     return (
       <Panel onMouseEnter={ this.onShowEvent } onMouseLeave={ this.onHideEvent }>
-        <Hearbeat bpm={ bpm } />
-        <Presentable present={ display }>
+        <HeartbeatsWrap>
+          {Array(count)
+            .fill(0)
+            .map((_0, index) => (
+              <Hearbeat
+                key={ `${academic}-heart-${index}th` }
+                bpm={ bpm }
+                delay={ index * 100 }
+                bloodHaemType={ haemType }
+              />
+            ))}
+        </HeartbeatsWrap>
+        <Presentable present={ isHovered }>
           <Dl>
             <dt>{'name'}</dt>
             <dd>{`${jaName} ${enName}`}</dd>
