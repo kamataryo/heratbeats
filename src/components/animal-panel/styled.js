@@ -9,17 +9,20 @@ export const Panel = styled.div`
   transition-duration: 2s;
 `
 
-export const Presentable = styled.div``
-//   border: ${props => (props.present ? 1 : 0)}px solid red;
-// `
+export const Presentable = styled.div`
+  box-shadow: 0 0 5px 0 #777;
+  border: 1px solid pink;
+`
 
 export const Dl = styled.dl`
   display: table-row;
+
   & > dt,
   & > dd {
     display: table-cell;
     padding: 2px 5px;
   }
+
   & > dt {
     font-weight: bolder;
   }

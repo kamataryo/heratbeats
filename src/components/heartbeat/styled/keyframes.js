@@ -21,21 +21,22 @@ export const selectHemoTypedAfterKeyframes = hemoType => {
  * @type {string}
  */
 const createTransition = (which, inflatedColor, deflatedColor) => keyframes`
-0%,
-100% {
-  left: ${which === 'after' ? -25 : 25}px;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background-color: ${deflatedColor};
-  border-radius: 50px 50px 0 0;
-}
-50%  {
-  left: ${which === 'after' ? 0 : 25}px;
-  top: 0;
-  width: 25px;
-  height: 40px;
-  background-color: ${inflatedColor};
-  border-radius: 12.5px 12.5px 0 0;
-}
+  0%,
+  100% {
+    left: ${which === 'after' ? -25 : 25}px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background-color: ${deflatedColor};
+    border-radius: 50px 50px 0 0;
+  }
+  
+  50% {
+    left: ${which === 'after' ? 0 : 25}px;
+    top: 0;
+    width: 25px;
+    height: 40px;
+    background-color: ${inflatedColor};
+    border-radius: 12.5px 12.5px 0 0;
+  }
 `

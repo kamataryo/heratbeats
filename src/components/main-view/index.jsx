@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import AnimalPanel from '../animal-panel'
 import { Main, MainTitle, AnimalsWrap } from './styled'
+import Charcters from '../animals'
 
 /**
  * map state To Props
@@ -49,12 +50,15 @@ export default class MainView extends React.Component {
       <Main>
         <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
         <AnimalsWrap>
-          {animals.map((animal, index) => (
-            <AnimalPanel
-              key={ `animals-${index}-${animal.academic}` }
-              animal={ animal }
-            />
-          ))}
+          {animals.map((animal, index) => {
+            const Character = Charcters[animal.slug] || (() => null)
+            return (
+              <div key={ `animals-${index}-${animal.academic}` }>
+                <AnimalPanel animal={ animal } />
+                <Character />
+              </div>
+            )
+          })}
         </AnimalsWrap>
       </Main>
     )
