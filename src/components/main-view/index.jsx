@@ -15,6 +15,10 @@ const mapStateToProps = state => {
   }
 }
 
+/**
+ * main view of app
+ * @type {function}
+ */
 @connect(mapStateToProps)
 export default class MainView extends React.Component {
   /**

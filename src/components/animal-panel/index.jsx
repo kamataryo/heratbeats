@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import Hearbeat from '../heartbeat'
 import { Panel, Academic } from './styled'
 
+/**
+ * render animal panel
+ * @type {function}
+ */
 export default class AnimalPanel extends React.Component {
   /**
    * propTypes

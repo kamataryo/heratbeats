@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import update from 'immutability-helper'
 import { Heart } from './styled'
 
+/**
+ * render beating heart
+ * @type {function}
+ */
 export default class Hearbeat extends React.Component {
   /**
    * propTypes
@@ -21,6 +25,7 @@ export default class Hearbeat extends React.Component {
    */
   constructor(props) {
     super(props)
+    // those state will be used to provide oscillation to heartbeats pulse.
     this.state = { counter: 0, timerId: false }
   }
 

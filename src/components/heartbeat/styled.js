@@ -1,5 +1,9 @@
 import styled, { keyframes } from 'styled-components'
 
+/**
+ * animation keyframes definitions for left side of heart
+ * @type {string}
+ */
 const afterTransition = keyframes`
 0%,
 100% {
@@ -20,6 +24,10 @@ const afterTransition = keyframes`
 }
 `
 
+/**
+ * animation keyframes definitions for right side of heart
+ * @type {string}
+ */
 const beforeTransition = keyframes`
   0%,
   100% {
@@ -40,6 +48,10 @@ const beforeTransition = keyframes`
   }  
 `
 
+/**
+ * styled heart component
+ * @type {function}
+ */
 export const Heart = styled.div`
   position: relative;
   width: 100px;
