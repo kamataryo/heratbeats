@@ -7,3 +7,6 @@ export const Panel = styled.div`
   border-radius: 8px;
   box-shadow: 0 3px 0 darkorange;
 `
+export const Academic = styled.span`
+  font-style: italic;
+`

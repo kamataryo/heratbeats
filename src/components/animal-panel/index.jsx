@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Hearbeat from '../heartbeat'
-import { Panel } from './styled'
+import { Panel, Academic } from './styled'
 
 export default class AnimalPanel extends React.Component {
   /**
@@ -27,16 +27,32 @@ export default class AnimalPanel extends React.Component {
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
-    const { animal: { biometrix: { heartbeat }, names } } = this.props
+    const {
+      animal: {
+        academic,
+        biometrix: { heartbeat },
+        names: { ja: jaName, en: enName },
+      },
+    } = this.props
     const heartbeatAverage = (heartbeat.min + heartbeat.max) / 2
 
     return (
       <Panel>
         <Hearbeat { ...heartbeat } />
-        <ul>
-          <li>{names.ja}</li>
-          <li>{`${heartbeatAverage} beats/sec.`}</li>
-        </ul>
+        <dl>
+          <dt>{'name'}</dt>
+          <dd>{`${jaName} ${enName}`}</dd>
+        </dl>
+        <dl>
+          <dt>{'学名'}</dt>
+          <dd>
+            <Academic>{academic}</Academic>
+          </dd>
+        </dl>
+        <dl>
+          <dt>{'心拍数'}</dt>
+          <dd>{`${heartbeatAverage} bpm`}</dd>
+        </dl>
       </Panel>
     )
   }
