@@ -45,7 +45,7 @@ export const Heart = styled.div`
   width: 100px;
   height: 80px;
 
-  &::before {
+  &:before {
     animation-name: ${beforeTransition};
     animation-duration ${props => 60 / props.perMin}s;
     animation-timing-function: 1, 0, 0, 1;
@@ -56,7 +56,7 @@ export const Heart = styled.div`
     transform: rotate(-45deg);
     transform-origin: 0 100%;
   }
-  &::after {
+  &:after {
     animation-name: ${afterTransition};
     animation-duration ${props => 60 / props.perMin}s;
     animation-timing-function: 1, 0, 0, 1;
