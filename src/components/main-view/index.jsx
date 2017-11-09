@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Hearbeat from '../heartbeat'
+import AnimalPanel from '../animal-panel'
 import { MainTitle, AnimalsWrap } from './styled'
 
 /**
@@ -43,15 +43,10 @@ export default class MainView extends React.Component {
     const { animals } = this.props
     return (
       <div>
-        <MainTitle>{'Heartbeats visualization of vertebrate'}</MainTitle>
+        <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
         <AnimalsWrap>
           {animals.map(animal => (
-            <dl key={ animal.academic }>
-              <dt>{animal.names.ja}</dt>
-              <dd>
-                <Hearbeat { ...animal.biometrix.heartbeat } />
-              </dd>
-            </dl>
+            <AnimalPanel key={ animal.academic } animal={ animal } />
           ))}
         </AnimalsWrap>
       </div>

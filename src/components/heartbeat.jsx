@@ -10,7 +10,7 @@ const afterTransition = keyframes`
   top: 0;
   width: 50px;
   height: 80px;
-  background-color: orange;
+  background-color: darkorange;
   border-radius: 50px 50px 0 0;
 }
 50%  {
@@ -30,7 +30,7 @@ const beforeTransition = keyframes`
     top: 0;
     width: 50px;
     height: 80px;
-    background-color: orange;
+    background-color: darkorange;
     border-radius: 25px 25px 0 0;
   }
   50%  {
