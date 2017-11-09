@@ -52,7 +52,7 @@ export default class AnimalPanel extends React.Component {
         academic,
         biometrix: {
           heart: { bpm, count = 1 },
-          blood: { hemoType = hemoglobin } = {},
+          blood: { hemoType = 'hemoglobin' } = {},
         },
         names: { ja: jaName, en: enName },
       },
