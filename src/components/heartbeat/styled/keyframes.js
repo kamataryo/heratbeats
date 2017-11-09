@@ -1,15 +1,15 @@
 import { keyframes } from 'styled-components'
 
-export const selectHaemTypedBeforeKeyframes = haemType => {
-  if (haemType === 'myo') {
+export const selectHemoTypedBeforeKeyframes = hemoType => {
+  if (hemoType === 'hemocyanin') {
     return createTransition('before', 'darkcyan', 'dodgerblue')
   } else {
     return createTransition('before', 'red', 'darkorange')
   }
 }
 
-export const selectHaemTypedAfterKeyframes = haemType => {
-  if (haemType === 'myo') {
+export const selectHemoTypedAfterKeyframes = hemoType => {
+  if (hemoType === 'hemocyanin') {
     return createTransition('after', 'darkcyan', 'dodgerblue')
   } else {
     return createTransition('after', 'red', 'darkorange')

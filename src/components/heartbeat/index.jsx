@@ -24,7 +24,7 @@ export default class Hearbeat extends React.Component {
       }),
     ]).isRequired,
     delay: PropTypes.number,
-    bloodHaemType: PropTypes.oneOf(['myo', 'hem']).isRequired,
+    bloodHaemType: PropTypes.oneOf(['hemocyanin', hemoglobin]).isRequired,
   }
 
   /**

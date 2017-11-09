@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {
-  selectHaemTypedBeforeKeyframes,
-  selectHaemTypedAfterKeyframes,
+  selectHemoTypedBeforeKeyframes,
+  selectHemoTypedAfterKeyframes,
 } from './keyframes'
 
 export const HeartbeatsWrap = styled.div`
@@ -19,7 +19,7 @@ export const Heart = styled.div`
 
   &:before {
     animation-name: ${props =>
-    selectHaemTypedBeforeKeyframes(props.bloodHaemType)};
+    selectHemoTypedBeforeKeyframes(props.bloodHaemType)};
     animation-duration ${props => 60 / props.perMin}s;
     animation-timing-function: 1, 0, 0, 1;
     animation-iteration-count: infinite;
@@ -32,7 +32,7 @@ export const Heart = styled.div`
   }
   &:after {
     animation-name: ${props =>
-    selectHaemTypedAfterKeyframes(props.bloodHaemType)};
+    selectHemoTypedAfterKeyframes(props.bloodHaemType)};
     animation-duration ${props => 60 / props.perMin}s;
     animation-timing-function: 1, 0, 0, 1;
     animation-iteration-count: infinite; 

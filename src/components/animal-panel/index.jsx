@@ -52,7 +52,7 @@ export default class AnimalPanel extends React.Component {
         academic,
         biometrix: {
           heart: { bpm, count = 1 },
-          blood: { haemType = 'hem' } = {},
+          blood: { hemoType = hemoglobin } = {},
         },
         names: { ja: jaName, en: enName },
       },
@@ -69,7 +69,7 @@ export default class AnimalPanel extends React.Component {
                 key={ `${academic}-heart-${index}th` }
                 bpm={ bpm }
                 delay={ index * 100 }
-                bloodHaemType={ haemType }
+                bloodHaemType={ hemoType }
               />
             ))}
         </HeartbeatsWrap>
