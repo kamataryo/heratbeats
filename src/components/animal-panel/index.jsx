@@ -50,15 +50,15 @@ export default class AnimalPanel extends React.Component {
     const {
       animal: {
         academic,
-        biometrix: { heartbeat },
+        biometrix: { heart: { bpm } },
         names: { ja: jaName, en: enName },
       },
     } = this.props
-    const heartbeatAverage = (heartbeat.min + heartbeat.max) / 2
+    const bpmAve = typeof bpm === 'number' ? bpm : (bpm.min + bpm.max) / 2
 
     return (
       <Panel onMouseEnter={ this.onShowEvent } onMouseLeave={ this.onHideEvent }>
-        <Hearbeat { ...heartbeat } />
+        <Hearbeat bpm={ bpm } />
         <Presentable present={ display }>
           <Dl>
             <dt>{'name'}</dt>
@@ -72,7 +72,7 @@ export default class AnimalPanel extends React.Component {
           </Dl>
           <Dl>
             <dt>{'心拍数'}</dt>
-            <dd>{`${heartbeatAverage} bpm`}</dd>
+            <dd>{`${bpmAve} bpm`}</dd>
           </Dl>
         </Presentable>
       </Panel>

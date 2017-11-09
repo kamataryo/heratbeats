@@ -14,8 +14,13 @@ export default class Hearbeat extends React.Component {
    */
   static propTypes = {
     // ownProps
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
+    bpm: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.shape({
+        min: PropTypes.number.isRequired,
+        max: PropTypes.number.isRequired,
+      }),
+    ]).isRequired,
   }
 
   /**
@@ -79,12 +84,12 @@ export default class Hearbeat extends React.Component {
    */
   render() {
     // const { counter } = this.state
-    const { min, max } = this.props
-    const average = (min + max) / 2
+    const { bpm } = this.props
+    const bpmAve = typeof bpm === 'number' ? bpm : (bpm.min + bpm.max) / 2
 
     return (
       <div>
-        <Heart perMin={ average } />
+        <Heart perMin={ bpmAve } />
       </div>
     )
   }

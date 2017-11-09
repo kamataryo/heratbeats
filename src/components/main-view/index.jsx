@@ -49,8 +49,11 @@ export default class MainView extends React.Component {
       <Main>
         <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
         <AnimalsWrap>
-          {animals.map(animal => (
-            <AnimalPanel key={ animal.academic } animal={ animal } />
+          {animals.map((animal, index) => (
+            <AnimalPanel
+              key={ `animals-${index}-${animal.academic}` }
+              animal={ animal }
+            />
           ))}
         </AnimalsWrap>
       </Main>

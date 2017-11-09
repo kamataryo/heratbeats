@@ -6,9 +6,11 @@
       "en": "whale"
     },
     "biometrix": {
-      "heartbeat": {
-        "min": 10,
-        "max": 30
+      "heart": {
+        "bpm": {
+          "min": 10,
+          "max": 30
+        }
       }
     }
   },
@@ -19,9 +21,11 @@
       "en": "elephant"
     },
     "biometrix": {
-      "heartbeat": {
-        "min": 30,
-        "max": 30
+      "heart": {
+        "bpm": {
+          "min": 30,
+          "max": 30
+        }
       }
     }
   },
@@ -32,9 +36,11 @@
       "en": "human"
     },
     "biometrix": {
-      "heartbeat": {
-        "min": 60,
-        "max": 70
+      "heart": {
+        "bpm": {
+          "min": 60,
+          "max": 70
+        }
       }
     }
   },
@@ -45,9 +51,11 @@
       "en": "cat"
     },
     "biometrix": {
-      "heartbeat": {
-        "min": 100,
-        "max": 130
+      "heart": {
+        "bpm": {
+          "min": 100,
+          "max": 13
+        }
       }
     }
   },
@@ -58,9 +66,8 @@
       "en": "House mouse"
     },
     "biometrix": {
-      "heartbeat": {
-        "min": 300,
-        "max": 300
+      "heart": {
+        "bpm": 300
       }
     }
   },
@@ -71,9 +78,21 @@
       "en": "Eurasian Pygmy Shrew"
     },
     "biometrix": {
-      "heartbeat": {
-        "min": 1200,
-        "max": 1200
+      "heart": {
+        "bpm": 1200
+      }
+    }
+  },
+  {
+    "academic": "",
+    "names": {
+      "ja": "タコ",
+      "en": "octpus"
+    },
+    "biometrix": {
+      "heart": {
+        "bpm": 50,
+        "count": 3
       }
     }
   }
