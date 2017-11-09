@@ -14,12 +14,12 @@ export const HeartbeatsWrap = styled.div`
  */
 export const Heart = styled.div`
   position: relative;
-  width: 100px;
-  height: 80px;
+  width: ${props => props.size * 100}px;
+  height: ${props => props.size * 80}px;
 
   &:before {
     animation-name: ${props =>
-    selectHemoTypedBeforeKeyframes(props.bloodHaemType)};
+    selectHemoTypedBeforeKeyframes(props.bloodHaemType, props.size)};
     animation-duration ${props => 60 / props.perMin}s;
     animation-timing-function: 1, 0, 0, 1;
     animation-iteration-count: infinite;
@@ -32,7 +32,7 @@ export const Heart = styled.div`
   }
   &:after {
     animation-name: ${props =>
-    selectHemoTypedAfterKeyframes(props.bloodHaemType)};
+    selectHemoTypedAfterKeyframes(props.bloodHaemType, props.size)};
     animation-duration ${props => 60 / props.perMin}s;
     animation-timing-function: 1, 0, 0, 1;
     animation-iteration-count: infinite; 

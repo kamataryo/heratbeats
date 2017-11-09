@@ -25,6 +25,7 @@ export default class Hearbeat extends React.Component {
     ]).isRequired,
     delay: PropTypes.number,
     bloodHaemType: PropTypes.oneOf(['hemocyanin', 'hemoglobin']).isRequired,
+    size: PropTypes.number,
   }
 
   /**
@@ -33,6 +34,7 @@ export default class Hearbeat extends React.Component {
    */
   static defaultProps = {
     delay: 0,
+    size: 1,
   }
 
   /**
@@ -96,12 +98,12 @@ export default class Hearbeat extends React.Component {
    */
   render() {
     // const { counter } = this.state
-    const { bpm, delay, bloodHaemType } = this.props
+    const { bpm, delay, bloodHaemType, size } = this.props
     const bpmAve = typeof bpm === 'number' ? bpm : (bpm.min + bpm.max) / 2
 
     return (
       <div>
-        <Heart perMin={ bpmAve } delay={ delay } bloodHaemType={ bloodHaemType } />
+        <Heart { ...{ perMin: bpmAve, delay, bloodHaemType, size } } />
       </div>
     )
   }

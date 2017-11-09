@@ -70,6 +70,7 @@ export default class AnimalPanel extends React.Component {
                 bpm={ bpm }
                 delay={ index * 100 }
                 bloodHaemType={ hemoType }
+                size={ 1 / Math.sqrt(count) }
               />
             ))}
         </HeartbeatsWrap>

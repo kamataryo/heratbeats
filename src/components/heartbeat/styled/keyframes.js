@@ -1,18 +1,18 @@
 import { keyframes } from 'styled-components'
 
-export const selectHemoTypedBeforeKeyframes = hemoType => {
+export const selectHemoTypedBeforeKeyframes = (hemoType, size) => {
   if (hemoType === 'hemocyanin') {
-    return createTransition('before', '#4a8392', 'dodgerblue')
+    return createTransition('before', '#4a8392', 'dodgerblue', size)
   } else {
-    return createTransition('before', 'red', 'darkorange')
+    return createTransition('before', 'red', 'darkorange', size)
   }
 }
 
-export const selectHemoTypedAfterKeyframes = hemoType => {
+export const selectHemoTypedAfterKeyframes = (hemoType, size) => {
   if (hemoType === 'hemocyanin') {
-    return createTransition('after', '#4a8392', 'dodgerblue')
+    return createTransition('after', '#4a8392', 'dodgerblue', size)
   } else {
-    return createTransition('after', 'red', 'darkorange')
+    return createTransition('after', 'red', 'darkorange', size)
   }
 }
 
@@ -20,23 +20,26 @@ export const selectHemoTypedAfterKeyframes = hemoType => {
  * animation keyframes definitions for left side of heart
  * @type {string}
  */
-const createTransition = (which, inflatedColor, deflatedColor) => keyframes`
-  0%,
-  100% {
-    left: ${which === 'after' ? -25 : 25}px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background-color: ${deflatedColor};
-    border-radius: 50px 50px 0 0;
-  }
-  
-  50% {
-    left: ${which === 'after' ? 0 : 25}px;
-    top: 0;
-    width: 25px;
-    height: 40px;
-    background-color: ${inflatedColor};
-    border-radius: 12.5px 12.5px 0 0;
-  }
-`
+const createTransition = (which, inflatedColor, deflatedColor, size) => {
+  const offset = 25 * size
+  return keyframes`
+    0%,
+    100% {
+      left: ${which === 'after' ? -offset : offset}px;
+      top: 0;
+      width: ${size * 50}px;
+      height: ${size * 80}px;
+      background-color: ${deflatedColor};
+      border-radius: ${size * 50}px ${size * 50}px 0 0;
+    }
+    
+    50% {
+      left: ${which === 'after' ? 0 : offset}px;
+      top: 0;
+      width: ${size * 25}px;
+      height: ${size * 40}px;
+      background-color: ${inflatedColor};
+      border-radius: ${size * 50}px ${size * 50}px 0 0;
+    }
+  `
+}
