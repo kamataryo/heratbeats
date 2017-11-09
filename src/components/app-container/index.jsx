@@ -18,9 +18,7 @@ const AppContainer = () => {
   return (
     <Provider store={ store }>
       <Router history={ history }>
-        <main>
-          <Route path="/" component={ MainView } exact />
-        </main>
+        <Route path="/" component={ MainView } exact />
       </Router>
     </Provider>
   )

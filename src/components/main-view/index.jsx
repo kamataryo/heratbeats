@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import AnimalPanel from '../animal-panel'
-import { MainTitle, AnimalsWrap } from './styled'
+import { Main, MainTitle, AnimalsWrap } from './styled'
 
 /**
  * map state To Props
@@ -42,14 +42,14 @@ export default class MainView extends React.Component {
   render() {
     const { animals } = this.props
     return (
-      <div>
+      <Main>
         <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
         <AnimalsWrap>
           {animals.map(animal => (
             <AnimalPanel key={ animal.academic } animal={ animal } />
           ))}
         </AnimalsWrap>
-      </div>
+      </Main>
     )
   }
 }

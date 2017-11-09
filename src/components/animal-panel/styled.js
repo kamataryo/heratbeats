@@ -5,4 +5,5 @@ export const Panel = styled.div`
   margin: 10px;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: 0 3px 0 darkorange;
 `
