@@ -38,14 +38,14 @@ const beforeTransition = keyframes`
     background-color: darkorange;
     border-radius: 25px 25px 0 0;
   }
-  50%  {
+  50% {
     left: 25px;
     top: 0;
     width: 25px;
     height: 40px;
     background-color: red;
     border-radius: 12.5px 12.5px 0 0;
-  }  
+  }
 `
 
 /**

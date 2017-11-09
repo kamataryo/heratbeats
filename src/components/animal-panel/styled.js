@@ -6,7 +6,25 @@ export const Panel = styled.div`
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 3px 0 darkorange;
+  transition-duration: 2s;
 `
+
+export const Presentable = styled.div``
+//   border: ${props => (props.present ? 1 : 0)}px solid red;
+// `
+
+export const Dl = styled.dl`
+  display: table-row;
+  & > dt,
+  & > dd {
+    display: table-cell;
+    padding: 2px 5px;
+  }
+  & > dt {
+    font-weight: bolder;
+  }
+`
+
 export const Academic = styled.span`
   font-style: italic;
 `

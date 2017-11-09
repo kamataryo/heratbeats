@@ -28,5 +28,5 @@ export const MainTitle = styled.h1`
 export const AnimalsWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: stretch;
 `

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Hearbeat from '../heartbeat'
-import { Panel, Academic } from './styled'
+import { Panel, Presentable, Dl, Academic } from './styled'
 
 /**
  * render animal panel
@@ -17,6 +17,18 @@ export default class AnimalPanel extends React.Component {
   }
 
   /**
+   * constructor
+   * @param  {object} props React props.
+   * @return {void}
+   */
+  constructor(props) {
+    super(props)
+    this.state = { display: false }
+    this.onShowEvent = this::this.onShowEvent
+    this.onHideEvent = this::this.onHideEvent
+  }
+
+  /**
    * shouldComponentUpdate
    * @param  {object} nextProps next props
    * @param  {object} nextState next state
@@ -26,11 +38,15 @@ export default class AnimalPanel extends React.Component {
     return true
   }
 
+  onShowEvent = () => this.setState({ display: true })
+  onHideEvent = () => this.setState({ display: false })
+
   /**
    * render
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
+    const { display } = this.state
     const {
       animal: {
         academic,
@@ -41,22 +57,24 @@ export default class AnimalPanel extends React.Component {
     const heartbeatAverage = (heartbeat.min + heartbeat.max) / 2
 
     return (
-      <Panel>
+      <Panel onMouseEnter={ this.onShowEvent } onMouseLeave={ this.onHideEvent }>
         <Hearbeat { ...heartbeat } />
-        <dl>
-          <dt>{'name'}</dt>
-          <dd>{`${jaName} ${enName}`}</dd>
-        </dl>
-        <dl>
-          <dt>{'学名'}</dt>
-          <dd>
-            <Academic>{academic}</Academic>
-          </dd>
-        </dl>
-        <dl>
-          <dt>{'心拍数'}</dt>
-          <dd>{`${heartbeatAverage} bpm`}</dd>
-        </dl>
+        <Presentable present={ display }>
+          <Dl>
+            <dt>{'name'}</dt>
+            <dd>{`${jaName} ${enName}`}</dd>
+          </Dl>
+          <Dl>
+            <dt>{'学名'}</dt>
+            <dd>
+              <Academic>{academic}</Academic>
+            </dd>
+          </Dl>
+          <Dl>
+            <dt>{'心拍数'}</dt>
+            <dd>{`${heartbeatAverage} bpm`}</dd>
+          </Dl>
+        </Presentable>
       </Panel>
     )
   }
