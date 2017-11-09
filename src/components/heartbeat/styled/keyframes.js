@@ -2,7 +2,7 @@ import { keyframes } from 'styled-components'
 
 export const selectHemoTypedBeforeKeyframes = hemoType => {
   if (hemoType === 'hemocyanin') {
-    return createTransition('before', 'darkcyan', 'dodgerblue')
+    return createTransition('before', '#4a8392', 'dodgerblue')
   } else {
     return createTransition('before', 'red', 'darkorange')
   }
@@ -10,7 +10,7 @@ export const selectHemoTypedBeforeKeyframes = hemoType => {
 
 export const selectHemoTypedAfterKeyframes = hemoType => {
   if (hemoType === 'hemocyanin') {
-    return createTransition('after', 'darkcyan', 'dodgerblue')
+    return createTransition('after', '#4a8392', 'dodgerblue')
   } else {
     return createTransition('after', 'red', 'darkorange')
   }
