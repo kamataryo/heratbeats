@@ -22,6 +22,27 @@ export const MainTitle = styled.h1`
 `
 
 /**
+ * button
+ * @type {function}
+ */
+export const Button = styled.button`
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: 0;
+  background-color: ${props =>
+    props.direction === 'high' ? '#80273F' : 'brown'};
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+`
+
+/**
  * wrapper for animal panels
  * @type {function}
  */

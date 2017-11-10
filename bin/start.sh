@@ -18,6 +18,13 @@ if [[ $NODE_ENV == '' ]]; then
 else
   echo -e "${INFO} ${RED}NODE_ENV${NC}=${WHITE}${NODE_ENV}${NC}"
 fi
+
+if [[ $DEBUG == '' ]]; then
+  echo -e "${INFO} ${RED}DEBUG${NC}=${WHITE}true${NC} ${GREEN}[default]${NC}"
+  DEBUG=true
+else
+  echo -e "${INFO} ${RED}DEBUG${NC}=${WHITE}${DEBUG}${NC}"
+fi
 echo '=================================================='
 
 NODE_ENV=$NODE_ENV \

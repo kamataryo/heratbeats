@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import AnimalPanel from '../animal-panel'
-import { Main, MainTitle, AnimalsWrap } from './styled'
+import { Main, Button, MainTitle, AnimalsWrap } from './styled'
 import Charcters from '../animals'
 import { TYPES as ANIMALS_ACTION_TYPES } from 'reducers/animals'
 
@@ -87,8 +87,13 @@ export default class MainView extends React.Component {
     return (
       <Main>
         <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
-        <button onClick={ sortAscend }>{'high'}</button>
-        <button onClick={ sortDescend }>{'low'}</button>
+        <Button direction={ 'high' } onClick={ sortAscend }>
+          {'high'}
+        </Button>
+        <Button direction={ 'low' } onClick={ sortDescend }>
+          {'low'}
+        </Button>
+
         <AnimalsWrap>
           {animals.map((animal, index) => {
             const Character = Charcters[animal.slug] || (() => null)
