@@ -18,6 +18,7 @@ export const Heart = styled.div`
   top: ${props => (props.pos ? props.pos[1] * 100 + '%' : 'auto')};
   width: ${props => props.size * 50}px;
   height: ${props => props.size * 80}px;
+  opacity: ${props => (props.opacity ? props.opacity : 1)};
   ${'' /* border: 1px solid blue; */}
   margin-right: 20px;
   
