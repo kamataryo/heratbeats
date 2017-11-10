@@ -36,10 +36,16 @@ export const Button = styled.button`
   border: 0;
   background-color: ${props =>
     props.direction === 'high' ? '#80273F' : 'brown'};
-  border-radius: 50px;
+  border-radius: 10px;
   color: white;
   font-weight: bold;
   font-size: 20px;
+  box-shadow: 0 5px Chocolate;
+
+  &:active {
+    transform: translate3d(0, 5px, 0);
+    box-shadow: none;
+  }
 `
 
 /**
