@@ -13,10 +13,14 @@ export const HeartbeatsWrap = styled.div`
  * @type {function}
  */
 export const Heart = styled.div`
-  position: relative;
-  width: ${props => props.size * 100}px;
+  position: ${props => (props.pos ? 'absolute' : 'relative')};
+  left: ${props => (props.pos ? props.pos[0] * 100 + '%' : 'auto')};
+  top: ${props => (props.pos ? props.pos[1] * 100 + '%' : 'auto')};
+  width: ${props => props.size * 50}px;
   height: ${props => props.size * 80}px;
-
+  ${'' /* border: 1px solid blue; */}
+  margin-right: 20px;
+  
   &:before {
     animation-name: ${props =>
     selectHemoTypedBeforeKeyframes(props.bloodHaemType, props.size)};

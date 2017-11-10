@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Heart } from '../heartbeat/styled'
 export const slug = 'whale'
 
 export default class Whale extends React.Component {
@@ -19,11 +19,18 @@ export default class Whale extends React.Component {
    */
   render() {
     return (
-      <svg width={ '999px' } viewBox={ '0 0 2999 706' } version={ '1.1' }>
-        <title>{'whale'}</title>
-        <g>
-          <path
-            d={ `M1,224
+      <div style={ { position: 'relative' } }>
+        <Heart
+          size={ 0.5 }
+          bloodHaemType={ 'hemoglobin' }
+          perMin={ 20 }
+          pos={ [0.4, 0.35] }
+        />
+        <svg width={ '999px' } viewBox={ '0 0 2999 706' } version={ '1.1' }>
+          <title>{'whale'}</title>
+          <g>
+            <path
+              d={ `M1,224
                 C10.3500524, 263.267907
                 113.370662, 613.267559
                 829.773336, 694.115809
@@ -49,10 +56,10 @@ export default class Whale extends React.Component {
                 89.1060195, 242.9921
                 1,224
                 Z` }
-            fill={ '#D8D8D8' }
-          />
-          <path
-            d={ `M1786.94762,60.4007718
+              fill={ '#D8D8D8' }
+            />
+            <path
+              d={ `M1786.94762,60.4007718
                 C1615.14985,49.3550959
                 1411.54093,45.8956302
                 1157.39978,50.4073013
@@ -117,12 +124,19 @@ export default class Whale extends React.Component {
                 1796.11042,56.2984844
                 1786.94762,60.4007718
                 Z` }
-            fill={ '#4A4A4A' }
-          />
-          <ellipse fill={ '#D8D8D8' } cx={ 934 } cy={ 221 } rx={ 25 } ry={ 25 } />
-          <ellipse fill={ '#4A4A4A' } cx={ 931.5 } cy={ 224.5 } rx={ 12.5 } ry={ 12.5 } />
-        </g>
-      </svg>
+              fill={ '#4A4A4A' }
+            />
+            <ellipse fill={ '#D8D8D8' } cx={ 934 } cy={ 221 } rx={ 25 } ry={ 25 } />
+            <ellipse
+              fill={ '#4A4A4A' }
+              cx={ 931.5 }
+              cy={ 224.5 }
+              rx={ 12.5 }
+              ry={ 12.5 }
+            />
+          </g>
+        </svg>
+      </div>
     )
   }
 }
