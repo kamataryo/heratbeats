@@ -72,7 +72,6 @@ export default class AnimalPanel extends React.Component {
 
     const isTouchOnlyDevice = isTouchDevice && !isMouseDevice
 
-    console.log(isTouchOnlyDevice)
     const onTouchClick = {
       [isTouchOnlyDevice ? 'onTouchStart' : 'onClick']: display
         ? this.onHideEvent
