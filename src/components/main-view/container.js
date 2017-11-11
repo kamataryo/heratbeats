@@ -9,7 +9,7 @@ import { TYPES as ANIMALS_ACTION_TYPES } from 'reducers/animals'
  */
 export const mapStateToProps = state => {
   return {
-    animals: state.animals,
+    animals: state.animals.data,
   }
 }
 

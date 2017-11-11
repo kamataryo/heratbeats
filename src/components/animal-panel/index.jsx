@@ -25,7 +25,7 @@ export default class AnimalPanel extends React.Component {
    */
   constructor(props) {
     super(props)
-    this.state = { isHovered: false }
+    this.state = { display: false }
     this.onShowEvent = this::this.onShowEvent
     this.onHideEvent = this::this.onHideEvent
   }
@@ -40,15 +40,15 @@ export default class AnimalPanel extends React.Component {
     return true
   }
 
-  onShowEvent = () => this.setState({ isHovered: true })
-  onHideEvent = () => this.setState({ isHovered: false })
+  onShowEvent = () => this.setState({ display: true })
+  onHideEvent = () => this.setState({ display: false })
 
   /**
    * render
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
-    const { isHovered } = this.state
+    const { display } = this.state
     const {
       animal: {
         academic,
@@ -62,11 +62,11 @@ export default class AnimalPanel extends React.Component {
       },
     } = this.props
     const bpmAve = typeof bpm === 'number' ? bpm : (bpm.min + bpm.max) / 2
-
-    const Character = Charcters[slug] || (() => null)
+    const hasCharacter = !!Charcters[slug]
+    const Character = hasCharacter ? Charcters[slug] : () => null
     return (
       <Wrap>
-        <Panel isHovered={ isHovered }>
+        <Panel display={ display } hasCharacter={ hasCharacter }>
           <HeartbeatsWrap>
             {Array(count)
               .fill(0)
@@ -80,7 +80,7 @@ export default class AnimalPanel extends React.Component {
                 />
               ))}
           </HeartbeatsWrap>
-          <Presentable present={ isHovered }>
+          <Presentable present={ display }>
             <Dl>
               <dt>{'name'}</dt>
               <dd>{`${jaName} ${enName}`}</dd>
@@ -99,8 +99,8 @@ export default class AnimalPanel extends React.Component {
         </Panel>
         <Character />
         <Heart
-          onMouseEnter={ this.onShowEvent }
-          onMouseLeave={ this.onHideEvent }
+          onClick={ display ? this.onHideEvent : this.onShowEvent }
+          onTouchStart={ display ? this.onHideEvent : this.onShowEvent }
           bloodHaemType={ 'hemoglobin' }
           bpm={ bpmAve }
           size={ displayProps.heart.size }

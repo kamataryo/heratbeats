@@ -1,6 +1,11 @@
-import initialAnimalsState from 'contents/animals.json'
+import data from 'contents/animals.json'
 import update from 'immutability-helper'
 import switz from 'switz'
+
+const initialAnimalsState = {
+  data,
+  propagation: [],
+}
 
 export const TYPES = {
   SORT: 'ANIMALS.SORT',
@@ -18,9 +23,9 @@ const animalsReducer = (state = initialAnimalsState, action) => {
     s
       .case(TYPES.SORT, () => {
         const { comparator } = payload
-        const sorting = [...state]
+        const sorting = [...state.data]
         sorting.sort(comparator)
-        return update(state, { $set: sorting })
+        return update(state, { data: { $set: sorting } })
       })
       .default(() => state),
   )
