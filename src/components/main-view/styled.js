@@ -26,7 +26,6 @@ export const MainTitle = styled.h1`
  * @type {function}
  */
 export const Button = styled.button`
-  background-color: transparent;
   cursor: pointer;
   outline: none;
   appearance: none;

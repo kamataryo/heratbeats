@@ -32,7 +32,7 @@ const createTransition = (which, inflatedColor, deflatedColor, size) => {
       background-color: ${deflatedColor};
       border-radius: ${size * 50}px ${size * 50}px 0 0;
     }
-    
+
     50% {
       left: ${which === 'after' ? 0 : offset}px;
       top: 0;

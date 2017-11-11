@@ -11,7 +11,8 @@
     "lint": "npm run lint:style && npm run lint:es",
     "lint:style": "stylelint --syntax scss './src/**/*.js' './src/**/*.jsx'",
     "lint:es": "eslint --cache --ext=jsx --ext=js .",
-    "lint:prettier": "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",
+    "lint:prettier":
+      "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -96,21 +97,11 @@
     "webpack-dev-server": "^2.9.1"
   },
   "lint-staged": {
-    "*.{js,jsx,json}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,jsx,json}": ["prettier --write", "git add"]
   },
   "nyc": {
-    "include": [
-      "src/*.js",
-      "src/*.jsx",
-      "src/**/*.js",
-      "src/**/*.jsx"
-    ],
-    "require": [
-      "babel-register"
-    ],
+    "include": ["src/*.js", "src/*.jsx", "src/**/*.js", "src/**/*.jsx"],
+    "require": ["babel-register"],
     "sourceMap": false,
     "instrument": false
   }

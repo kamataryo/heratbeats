@@ -19,9 +19,8 @@ export const Heart = styled.div`
   width: ${props => props.size * 50}px;
   height: ${props => props.size * 80}px;
   opacity: ${props => (props.opacity ? props.opacity : 1)};
-  ${'' /* border: 1px solid blue; */}
   margin-right: 20px;
-  
+
   &:before {
     animation-name: ${props =>
     selectHemoTypedBeforeKeyframes(props.bloodHaemType, props.size)};
@@ -35,6 +34,7 @@ export const Heart = styled.div`
     transform: rotate(-45deg);
     transform-origin: 0 100%;
   }
+
   &:after {
     animation-name: ${props =>
     selectHemoTypedAfterKeyframes(props.bloodHaemType, props.size)};
