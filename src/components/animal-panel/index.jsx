@@ -16,6 +16,8 @@ export default class AnimalPanel extends React.Component {
    */
   static propTypes = {
     animal: PropTypes.object.isRequired,
+    isTouchDevice: PropTypes.bool.isRequired,
+    isMouseDevice: PropTypes.bool.isRequired,
   }
 
   /**
@@ -60,10 +62,23 @@ export default class AnimalPanel extends React.Component {
         },
         displayProps,
       },
+      isTouchDevice,
+      isMouseDevice,
     } = this.props
+
     const bpmAve = typeof bpm === 'number' ? bpm : (bpm.min + bpm.max) / 2
     const hasCharacter = !!Charcters[slug]
     const Character = hasCharacter ? Charcters[slug] : () => null
+
+    const isTouchOnlyDevice = isTouchDevice && !isMouseDevice
+
+    console.log(isTouchOnlyDevice)
+    const onTouchClick = {
+      [isTouchOnlyDevice ? 'onTouchStart' : 'onClick']: display
+        ? this.onHideEvent
+        : this.onShowEvent,
+    }
+
     return (
       <Wrap>
         <Panel display={ display } hasCharacter={ hasCharacter }>
@@ -99,8 +114,7 @@ export default class AnimalPanel extends React.Component {
         </Panel>
         <Character />
         <Heart
-          onClick={ display ? this.onHideEvent : this.onShowEvent }
-          onTouchStart={ display ? this.onHideEvent : this.onShowEvent }
+          { ...onTouchClick }
           bloodHaemType={ 'hemoglobin' }
           bpm={ bpmAve }
           size={ displayProps.heart.size }

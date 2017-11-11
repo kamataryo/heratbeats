@@ -6,6 +6,7 @@ import createHistory from 'history/createBrowserHistory'
  * Reducers
  */
 import animalsReducer from 'reducers/animals'
+import browserMetaReducer from 'reducers/browser-meta'
 
 /**
  * Browser history
@@ -26,6 +27,7 @@ const middlewares = [routerMiddleware(history)]
 const store = createStore(
   combineReducers({
     animals: animalsReducer,
+    browserMeta: browserMetaReducer,
     router: routerReducer,
   }),
   applyMiddleware(...middlewares),

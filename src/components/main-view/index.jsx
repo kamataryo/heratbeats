@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import AnimalPanel from '../animal-panel'
+import AnimalPanel from '../animal-panel/container'
 import { Main, Button, MainTitle, AnimalsWrap } from './styled'
 
 /**
