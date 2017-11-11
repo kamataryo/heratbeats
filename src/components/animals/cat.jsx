@@ -1,5 +1,4 @@
 import React from 'react'
-import { Heart } from '../heartbeat/styled'
 
 export const slug = 'cat'
 
@@ -21,13 +20,6 @@ export default class Cat extends React.Component {
   render() {
     return (
       <div style={ { position: 'relative' } }>
-        <Heart
-          size={ 0.5 }
-          bloodHaemType={ 'hemoglobin' }
-          perMin={ 115 }
-          pos={ [0.6, 0.35] }
-          opacity={ 0.6 }
-        />
         <svg
           width={ '500px' }
           viewBox={ '0 0 1291 1330' }

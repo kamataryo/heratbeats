@@ -1,8 +1,10 @@
 import React from 'react'
-import { Heart } from '../heartbeat/styled'
-
 export const slug = 'whale'
 
+/**
+ * Whale svg wrapped component
+ * @type {function}
+ */
 export default class Whale extends React.Component {
   /**
    * shouldComponentUpdate
@@ -21,13 +23,6 @@ export default class Whale extends React.Component {
   render() {
     return (
       <div style={ { position: 'relative' } }>
-        <Heart
-          size={ 0.5 }
-          bloodHaemType={ 'hemoglobin' }
-          perMin={ 20 }
-          pos={ [0.4, 0.48] }
-          opacity={ 0.6 }
-        />
         <svg
           width={ '999px' }
           viewBox={ '0 0 2999 706' }

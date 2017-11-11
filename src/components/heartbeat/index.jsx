@@ -103,7 +103,7 @@ export default class Hearbeat extends React.Component {
 
     return (
       <div>
-        <Heart { ...{ perMin: bpmAve, delay, bloodHaemType, size } } />
+        <Heart { ...{ bpm: bpmAve, delay, bloodHaemType, size } } />
       </div>
     )
   }
