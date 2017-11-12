@@ -8,6 +8,8 @@ import AnimalPanel from './'
  */
 export const mapStateToProps = state => {
   return {
+    scaleEnabled: state.animals.scale.enabled,
+    ppm: state.animals.scale.ppm,
     isTouchDevice: state.browserMeta.isTouchDevice,
     isMouseDevice: state.browserMeta.isMouseDevice,
   }

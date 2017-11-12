@@ -4,11 +4,16 @@ import switz from 'switz'
 
 const initialAnimalsState = {
   data,
-  propagation: [],
+  scale: {
+    enabled: true,
+    ppm: 200, // pixel per meter
+  },
 }
 
 export const TYPES = {
   SORT: 'ANIMALS.SORT',
+  SWITCH_SCALING: 'ANIMALS.SWITCH_SCALING',
+  SET_PPM: 'ANIMALS.SET_PPM',
 }
 
 /**
@@ -26,6 +31,14 @@ const animalsReducer = (state = initialAnimalsState, action) => {
         const sorting = [...state.data]
         sorting.sort(comparator)
         return update(state, { data: { $set: sorting } })
+      })
+      .case(TYPES.SWITCH_SCALING, () => {
+        const { enabled } = payload
+        return update(state, { scale: { enabled: { $set: enabled } } })
+      })
+      .case(TYPES.SET_PPM, () => {
+        const { ppm } = payload
+        return update(state, { scale: { ppm: { $set: ppm } } })
       })
       .default(() => state),
   )

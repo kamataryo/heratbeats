@@ -16,6 +16,8 @@ export default class AnimalPanel extends React.Component {
    */
   static propTypes = {
     animal: PropTypes.object.isRequired,
+    scaleEnabled: PropTypes.bool.isRequired,
+    ppm: PropTypes.number.isRequired,
     isTouchDevice: PropTypes.bool.isRequired,
     isMouseDevice: PropTypes.bool.isRequired,
   }
@@ -52,11 +54,14 @@ export default class AnimalPanel extends React.Component {
   render() {
     const { display } = this.state
     const {
+      scaleEnabled,
+      ppm,
       animal: {
         academic,
         slug,
         names: { ja: jaName, en: enName },
         biometrix: {
+          length,
           heart: { bpm, count = 1 },
           blood: { hemoType = 'hemoglobin' } = {},
         },
@@ -111,7 +116,7 @@ export default class AnimalPanel extends React.Component {
             </Dl>
           </Presentable>
         </Panel>
-        <Character />
+        <Character scaleEnabled={ scaleEnabled } width={ length * ppm } />
         <Heart
           { ...onTouchClick }
           bloodHaemType={ 'hemoglobin' }

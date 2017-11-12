@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 export const slug = 'whale'
 
 /**
@@ -6,6 +7,15 @@ export const slug = 'whale'
  * @type {function}
  */
 export default class Whale extends React.Component {
+  /**
+   * propTypes
+   * @type {object}
+   */
+  static propTypes = {
+    scaleEnabled: PropTypes.bool.isRequired,
+    width: PropTypes.number.isRequired,
+  }
+
   /**
    * shouldComponentUpdate
    * @param  {object} nextProps next props
@@ -21,10 +31,12 @@ export default class Whale extends React.Component {
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
+    const { scaleEnabled, width } = this.props
+
     return (
       <div style={ { position: 'relative' } }>
         <svg
-          width={ '999px' }
+          width={ scaleEnabled ? width : 1024 }
           viewBox={ '0 0 2999 706' }
           version={ '1.1' }
           xmlns={ 'http://www.w3.org/2000/svg' }

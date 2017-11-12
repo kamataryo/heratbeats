@@ -1,8 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const slug = 'cat'
 
 export default class Cat extends React.Component {
+  /**
+   * propTypes
+   * @type {object}
+   */
+  static propTypes = {
+    scaleEnabled: PropTypes.bool.isRequired,
+    width: PropTypes.number.isRequired,
+  }
+
   /**
    * shouldComponentUpdate
    * @param  {object} nextProps next props
@@ -18,10 +28,12 @@ export default class Cat extends React.Component {
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
+    const { scaleEnabled, width } = this.props
+
     return (
       <div style={ { position: 'relative' } }>
         <svg
-          width={ '500px' }
+          width={ scaleEnabled ? width : 1024 }
           viewBox={ '0 0 1291 1330' }
           version={ '1.1' }
           xmlns={ 'http://www.w3.org/2000/svg' }
