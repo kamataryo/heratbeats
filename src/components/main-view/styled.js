@@ -30,19 +30,17 @@ export const Button = styled.button`
   outline: none;
   appearance: none;
   width: 100px;
-  height: 100px;
+  height: 40px;
   margin: 10px;
   border: 0;
-  background-color: ${props =>
-    props.direction === 'high' ? '#80273F' : 'brown'};
+  background-color: white;
+  border: 1px solid gray;
   border-radius: 10px;
-  color: white;
-  font-weight: bold;
+  color: gray;
   font-size: 20px;
-  box-shadow: 0 5px Chocolate;
 
   &:active {
-    transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 3px, 0);
     box-shadow: none;
   }
 `

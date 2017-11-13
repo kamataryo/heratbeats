@@ -2,15 +2,15 @@ import styled from 'styled-components'
 
 export const Wrap = styled.div`
   position: relative;
+  display: flex;
 `
 
 export const Panel = styled.div`
-  position: ${props => (props.hasCharacter ? 'absolute' : 'relative')};
-  background-color: lightpink;
+  position: relative;
   margin: 10px;
   padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 3px 0 darkorange;
+  border: 1px solid gray;
+  border-radius: 4px;
   transition-duration: 2s;
   display: ${props =>
     props.display || !props.hasCharacter ? 'inline-block' : 'none'};

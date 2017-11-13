@@ -31,8 +31,11 @@ export default class Whale extends React.Component {
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
-    const { scaleEnabled, width } = this.props
-
+    const {
+      scaleEnabled,
+      // width
+    } = this.props
+    const width = 1024
     return (
       <div style={ { position: 'relative' } }>
         <svg

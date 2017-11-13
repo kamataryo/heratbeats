@@ -28,8 +28,11 @@ export default class Cat extends React.Component {
    * @return {ReactElement|null|false} render a React element.
    */
   render() {
-    const { scaleEnabled, width } = this.props
-
+    const {
+      scaleEnabled,
+      // width
+    } = this.props
+    const width = 500
     return (
       <div style={ { position: 'relative' } }>
         <svg

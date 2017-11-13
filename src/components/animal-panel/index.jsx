@@ -85,7 +85,7 @@ export default class AnimalPanel extends React.Component {
 
     return (
       <Wrap>
-        <Panel display={ display } hasCharacter={ hasCharacter }>
+        <Panel display={ display || true } hasCharacter={ hasCharacter }>
           <HeartbeatsWrap>
             {Array(count)
               .fill(0)
@@ -116,17 +116,19 @@ export default class AnimalPanel extends React.Component {
             </Dl>
           </Presentable>
         </Panel>
-        <Character scaleEnabled={ scaleEnabled } width={ length * ppm } />
-        <Heart
-          { ...onTouchClick }
-          bloodHaemType={ 'hemoglobin' }
-          bpm={ bpmAve }
-          size={ displayProps.heart.size }
-          positionX={ displayProps.heart.position.px }
-          positionY={ displayProps.heart.position.py }
-          alpha={ displayProps.heart.alpha }
-          isPointer
-        />
+        <div style={ { positon: 'relative' } }>
+          <Character scaleEnabled={ scaleEnabled } width={ length * ppm } />
+          <Heart
+            { ...onTouchClick }
+            bloodHaemType={ 'hemoglobin' }
+            bpm={ bpmAve }
+            size={ displayProps.heart.size }
+            positionX={ displayProps.heart.position.px }
+            positionY={ displayProps.heart.position.py }
+            alpha={ displayProps.heart.alpha }
+            isPointer
+          />
+        </div>
       </Wrap>
     )
   }
