@@ -5,6 +5,13 @@ export const Wrap = styled.div`
   display: flex;
 `
 
+export const CommentaryBox = styled.div`
+  display: block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+`
+
 export const Panel = styled.div`
   position: relative;
   margin: 10px;

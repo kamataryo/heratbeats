@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Hearbeat, { HeartbeatsWrap } from '../heartbeat'
-import { Wrap, Panel, Presentable, Dl, Academic } from './styled'
+import { Wrap, CommentaryBox, Panel, Presentable, Dl, Academic } from './styled'
 import Charcters from '../animals'
 import { Heart } from '../heartbeat/styled'
 
@@ -85,37 +85,7 @@ export default class AnimalPanel extends React.Component {
 
     return (
       <Wrap>
-        <Panel display={ display || true } hasCharacter={ hasCharacter }>
-          <HeartbeatsWrap>
-            {Array(count)
-              .fill(0)
-              .map((_0, index) => (
-                <Hearbeat
-                  key={ `${academic}-heart-${index}th` }
-                  bpm={ bpm }
-                  delay={ index * 100 }
-                  bloodHaemType={ hemoType }
-                  size={ 1 / Math.sqrt(count) }
-                />
-              ))}
-          </HeartbeatsWrap>
-          <Presentable present={ display }>
-            <Dl>
-              <dt>{'name'}</dt>
-              <dd>{`${jaName} ${enName}`}</dd>
-            </Dl>
-            <Dl>
-              <dt>{'学名'}</dt>
-              <dd>
-                <Academic>{academic}</Academic>
-              </dd>
-            </Dl>
-            <Dl>
-              <dt>{'心拍数'}</dt>
-              <dd>{`${bpmAve} bpm`}</dd>
-            </Dl>
-          </Presentable>
-        </Panel>
+        <CommentaryBox>{'commenttary-box'}</CommentaryBox>
         <div style={ { positon: 'relative' } }>
           <Character scaleEnabled={ scaleEnabled } width={ length * ppm } />
           <Heart
@@ -129,7 +99,40 @@ export default class AnimalPanel extends React.Component {
             isPointer
           />
         </div>
+        <CommentaryBox>{'commenttary-box'}</CommentaryBox>
       </Wrap>
     )
   }
 }
+
+// <Panel display={ display || true } hasCharacter={ hasCharacter }>
+//   <HeartbeatsWrap>
+//     {Array(count)
+//       .fill(0)
+//       .map((_0, index) => (
+//         <Hearbeat
+//           key={ `${academic}-heart-${index}th` }
+//           bpm={ bpm }
+//           delay={ index * 100 }
+//           bloodHaemType={ hemoType }
+//           size={ 1 / Math.sqrt(count) }
+//         />
+//       ))}
+//   </HeartbeatsWrap>
+//   <Presentable present={ display }>
+//     <Dl>
+//       <dt>{'name'}</dt>
+//       <dd>{`${jaName} ${enName}`}</dd>
+//     </Dl>
+//     <Dl>
+//       <dt>{'学名'}</dt>
+//       <dd>
+//         <Academic>{academic}</Academic>
+//       </dd>
+//     </Dl>
+//     <Dl>
+//       <dt>{'心拍数'}</dt>
+//       <dd>{`${bpmAve} bpm`}</dd>
+//     </Dl>
+//   </Presentable>
+// </Panel>

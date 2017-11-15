@@ -50,7 +50,5 @@ export const Button = styled.button`
  * @type {function}
  */
 export const AnimalsWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: block;
 `
