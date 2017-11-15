@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import AnimalPanel from '../animal-panel/container'
+import AnimalRow from '../animal-row/container'
 import { Main, Button, MainTitle, AnimalsWrap } from './styled'
 
 /**
@@ -55,7 +55,7 @@ export default class MainView extends React.Component {
           {animals.map((animal, index) => {
             return (
               <div key={ `animals-${index}-${animal.academic}` }>
-                <AnimalPanel animal={ animal } />
+                <AnimalRow animal={ animal } />
               </div>
             )
           })}

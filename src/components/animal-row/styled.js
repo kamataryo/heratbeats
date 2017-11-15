@@ -7,8 +7,15 @@ export const Wrap = styled.div`
 
 export const CommentaryBox = styled.div`
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+`
+
+export const CharacterBox = styled.div`
+  display: block;
+  width: 200px;
+  height: 200px;
   border: 1px solid black;
 `
 

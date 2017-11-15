@@ -1,7 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Hearbeat, { HeartbeatsWrap } from '../heartbeat'
-import { Wrap, CommentaryBox, Panel, Presentable, Dl, Academic } from './styled'
+import {
+  Wrap,
+  CommentaryBox,
+  CharacterBox,
+  Panel,
+  Presentable,
+  Dl,
+  Academic,
+} from './styled'
 import Charcters from '../animals'
 import { Heart } from '../heartbeat/styled'
 
@@ -9,15 +17,13 @@ import { Heart } from '../heartbeat/styled'
  * render animal panel
  * @type {function}
  */
-export default class AnimalPanel extends React.Component {
+export default class AnimalRow extends React.Component {
   /**
    * propTypes
    * @type {object}
    */
   static propTypes = {
     animal: PropTypes.object.isRequired,
-    scaleEnabled: PropTypes.bool.isRequired,
-    ppm: PropTypes.number.isRequired,
     isTouchDevice: PropTypes.bool.isRequired,
     isMouseDevice: PropTypes.bool.isRequired,
   }
@@ -54,8 +60,6 @@ export default class AnimalPanel extends React.Component {
   render() {
     const { display } = this.state
     const {
-      scaleEnabled,
-      ppm,
       animal: {
         academic,
         slug,
@@ -86,19 +90,21 @@ export default class AnimalPanel extends React.Component {
     return (
       <Wrap>
         <CommentaryBox>{'commenttary-box'}</CommentaryBox>
-        <div style={ { positon: 'relative' } }>
-          <Character scaleEnabled={ scaleEnabled } width={ length * ppm } />
-          <Heart
-            { ...onTouchClick }
-            bloodHaemType={ 'hemoglobin' }
-            bpm={ bpmAve }
-            size={ displayProps.heart.size }
-            positionX={ displayProps.heart.position.px }
-            positionY={ displayProps.heart.position.py }
-            alpha={ displayProps.heart.alpha }
-            isPointer
-          />
-        </div>
+        <CharacterBox>
+          <div style={ { positon: 'relative' } }>
+            <Character />
+            <Heart
+              { ...onTouchClick }
+              bloodHaemType={ 'hemoglobin' }
+              bpm={ bpmAve }
+              size={ displayProps.heart.size }
+              positionX={ displayProps.heart.position.px }
+              positionY={ displayProps.heart.position.py }
+              alpha={ displayProps.heart.alpha }
+              isPointer
+            />
+          </div>
+        </CharacterBox>
         <CommentaryBox>{'commenttary-box'}</CommentaryBox>
       </Wrap>
     )

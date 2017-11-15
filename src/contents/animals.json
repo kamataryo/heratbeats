@@ -16,6 +16,10 @@
       }
     },
     "displayProps": {
+      "extents": {
+        "columns": 3,
+        "rows": 1
+      },
       "heart": {
         "size": 0.5,
         "position": {
@@ -23,58 +27,6 @@
           "py": 0.48
         },
         "alpha": 0.6
-      }
-    }
-  },
-  {
-    "academic": "Loxodonta africana",
-    "names": {
-      "ja": "アフリカゾウ",
-      "en": "elephant"
-    },
-    "biometrix": {
-      "length": 6.5,
-      "heart": {
-        "bpm": {
-          "min": 30,
-          "max": 30
-        }
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
-      }
-    }
-  },
-  {
-    "academic": "Homo sapiens",
-    "names": {
-      "ja": "ヒト",
-      "en": "human"
-    },
-    "biometrix": {
-      "length": 0.5,
-      "heart": {
-        "bpm": {
-          "min": 60,
-          "max": 70
-        }
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
       }
     }
   },
@@ -95,6 +47,10 @@
       }
     },
     "displayProps": {
+      "extents": {
+        "columns": 1,
+        "rows": 2
+      },
       "heart": {
         "size": 0.5,
         "position": {
@@ -102,127 +58,6 @@
           "py": 0.35
         },
         "alpha": 0.6
-      }
-    }
-  },
-  {
-    "academic": "Mus musculus",
-    "names": {
-      "ja": "ハツカネズミ",
-      "en": "House mouse"
-    },
-    "biometrix": {
-      "length": 0.1,
-      "heart": {
-        "bpm": 300
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
-      }
-    }
-  },
-  {
-    "academic": "Tamias sibiricus",
-    "names": {
-      "ja": "シマリス",
-      "en": "Chipmunk"
-    },
-    "biometrix": {
-      "length": 0.1,
-      "heart": {
-        "bpm": 400
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
-      }
-    },
-    "activity": "normal"
-  },
-  {
-    "academic": "Tamias sibiricus",
-    "names": {
-      "ja": "シマリス (冬眠中)",
-      "en": "Chipmunk (hybernation)"
-    },
-    "biometrix": {
-      "length": 0.1,
-      "heart": {
-        "bpm": 10
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
-      }
-    },
-    "activity": "hybernation"
-  },
-  {
-    "academic": "Sorex minutus",
-    "names": {
-      "ja": "ヨーロッパヒメトガリネズミ",
-      "en": "Eurasian Pygmy Shrew"
-    },
-    "biometrix": {
-      "length": 0.07,
-      "heart": {
-        "bpm": 1200
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
-      }
-    }
-  },
-  {
-    "academic": "(octopus-not-specified)",
-    "names": {
-      "ja": "タコ",
-      "en": "octopus"
-    },
-    "biometrix": {
-      "length": 0.2,
-      "heart": {
-        "bpm": 50,
-        "count": 3
-      },
-      "blood": {
-        "hemoType": "hemocyanin"
-      }
-    },
-    "displayProps": {
-      "heart": {
-        "size": 0,
-        "position": {
-          "px": 0,
-          "py": 0
-        },
-        "alpha": 0
       }
     }
   }
