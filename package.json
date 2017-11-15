@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./bin/start.sh",
     "build": "./bin/build.sh",
-    "test": "cross-env NODE_ENV=test NODE_PATH=src:test mocha",
+    "test": "cross-env NODE_ENV=test jest --forceExit",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "lint": "npm run lint:style && npm run lint:es",
     "lint:style": "stylelint --syntax scss './src/**/*.js' './src/**/*.jsx'",
@@ -15,8 +15,11 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "enzyme-adapter-react-16": "^1.1.0",
+    "eslint-plugin-jest": "^21.3.2",
     "history": "^4.7.2",
     "immutability-helper": "^2.4.0",
+    "jest": "^21.2.1",
     "prop-types": "^15.6.0",
     "react": "15.6.2",
     "react-animations": "^1.0.0",
@@ -51,10 +54,8 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.18.0",
     "babel-runtime": "^6.11.6",
-    "chai": "^4.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.5",
-    "css-loader": "^0.28.5",
     "enzyme": "^2.8.2",
     "eslint": "^4.10.0",
     "eslint-import-resolver-node": "^0.3.1",
@@ -62,7 +63,6 @@
     "eslint-plugin-chai-expect": "^1.1.1",
     "eslint-plugin-eslint-comments": "^2.0.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-mocha": "^4.11.0",
     "eslint-plugin-react": "^7.4.0",
     "file-loader": "^0.11.2",
     "git-revision-webpack-plugin": "^2.5.1",
@@ -70,9 +70,6 @@
     "imports-loader": "^0.7.0",
     "jsdom": "9.9.1",
     "json-loader": "^0.5.4",
-    "lcov-parse": "^1.0.0",
-    "mocha": "^3.5.0",
-    "mocha-jsdom": "^1.1.0",
     "nyc": "^11.1.0",
     "prettier": "^1.7.4",
     "prettier-eslint": "^8.2.1",
@@ -100,18 +97,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "nyc": {
-    "include": [
-      "src/*.js",
-      "src/*.jsx",
-      "src/**/*.js",
-      "src/**/*.jsx"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "sourceMap": false,
-    "instrument": false
   }
 }
