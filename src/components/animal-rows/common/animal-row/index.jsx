@@ -17,13 +17,19 @@ import { Heart } from '../heartbeat/styled'
  * render animal panel
  * @type {function}
  */
-export default class AnimalRow extends React.Component {
+export default class AnimalRows extends React.Component {
   /**
    * propTypes
    * @type {object}
    */
   static propTypes = {
-    animal: PropTypes.object.isRequired,
+    // ownProps
+    animalSlug: PropTypes.string.isRequired,
+    animalIndex: PropTypes.number.isRequired,
+    // stateProps
+    animals: PropTypes.object.isRequired,
+
+    // They may be going to be deleted
     isTouchDevice: PropTypes.bool.isRequired,
     isMouseDevice: PropTypes.bool.isRequired,
   }

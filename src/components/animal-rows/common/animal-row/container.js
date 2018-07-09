@@ -8,11 +8,14 @@ import AnimalPanel from './'
  */
 export const mapStateToProps = state => {
   return {
-    scaleEnabled: state.animals.scale.enabled,
-    ppm: state.animals.scale.ppm,
+    animals: state.animals,
+
+    // They may be going to be deleted
     isTouchDevice: state.browserMeta.isTouchDevice,
     isMouseDevice: state.browserMeta.isMouseDevice,
   }
 }
 
-export default connect(mapStateToProps)(AnimalPanel)
+const ConnectedAnimalRows = connect(mapStateToProps)(AnimalPanel)
+
+export default ConnectedAnimalRows

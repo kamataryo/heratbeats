@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
  */
 import { Router, Route } from 'react-router-dom'
 import store, { history } from 'store'
-import MainView from 'components/main-view/container'
+import MainView from 'components/routes/main-view/container'
 
 /**
  * @return {function} App Container

@@ -1,21 +1,24 @@
 import styled from 'styled-components'
 
+export const CommentaryBox = styled.div`
+  display: block;
+  width: 200px;
+  border: 1px solid black;
+`
+
+export const AnimalRow = styled.div`
+  display: flex;
+  border: 1px solid black;
+  padding: 5px;
+`
+
 export const Wrap = styled.div`
   position: relative;
   display: flex;
 `
-
-export const CommentaryBox = styled.div`
-  display: block;
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
-`
-
 export const CharacterBox = styled.div`
   display: block;
   width: 200px;
-  height: 200px;
   border: 1px solid black;
 `
 

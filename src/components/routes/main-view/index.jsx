@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import AnimalRow from '../animal-row/container'
+import AnimalRows from 'components/animal-rows'
+import Empty from 'components/common/empty'
 import { Main, Button, MainTitle, AnimalsWrap } from './styled'
 
 /**
@@ -41,6 +42,12 @@ export default class MainView extends React.Component {
       sortAscend,
       sortDescend,
     } = this.props
+
+    const animalOrder = animals.map((animal, index) => ({
+      animalSlug: animal.slug,
+      animalIndex: index,
+    }))
+
     return (
       <Main>
         <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
@@ -52,11 +59,14 @@ export default class MainView extends React.Component {
         </Button>
 
         <AnimalsWrap>
-          {animals.map((animal, index) => {
+          {animalOrder.map(({ animalSlug, animalIndex }) => {
+            const TheAnimalRows = AnimalRows[animalSlug] || Empty
             return (
-              <div key={ `animals-${index}-${animal.academic}` }>
-                <AnimalRow animal={ animal } />
-              </div>
+              <TheAnimalRows
+                key={ `animals-${animalIndex}-${animalSlug}` }
+                animalSlug={ animalSlug }
+                animalIndex={ animalIndex }
+              />
             )
           })}
         </AnimalsWrap>
