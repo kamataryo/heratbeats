@@ -6,19 +6,15 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import GitRevisionPlugin from 'git-revision-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-
-const gitRevisionPlugin = new GitRevisionPlugin()
 
 const __NODE_ENV__ = JSON.stringify(process.env.NODE_ENV) || 'development'
 const __DEBUG__ = JSON.stringify(process.env.DEBUG) === '"true"'
 const __TEST__ =
   JSON.stringify(process.env.TEST) === '"true"' ||
   JSON.stringify(process.env.NODE_ENV) === '"test"'
-const __COMMITHASH__ = JSON.stringify(gitRevisionPlugin.commithash())
 
-// エントリポイント
+// entry
 const mainEntry = ['./src/main.jsx']
 
 const devEntries = [
@@ -55,14 +51,6 @@ export default {
         test: /.jsx?$/,
         use: [{ loader: 'babel-loader?compact=false' }],
       },
-      {
-        test: /\.(ttf|eot|svg|png|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
     ],
   },
 
@@ -76,24 +64,19 @@ export default {
     // do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin(),
 
-    // HTMLをコピー
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
 
-    // アセットファイルをコピー
     new CopyWebpackPlugin([
       { from: './public/assets', to: 'assets' },
       { from: './_redirects', to: path.join(__dirname, '/dist') },
     ]),
 
-    // メタ情報をグローバル変数として埋め込む
-    // metaReducerに入れるので、そこから使う
     new webpack.DefinePlugin({
       __NODE_ENV__,
       __DEBUG__,
       __TEST__,
-      __COMMITHASH__,
     }),
   ],
 

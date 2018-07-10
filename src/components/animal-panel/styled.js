@@ -5,6 +5,9 @@ export const Wrap = styled.div`
   display: flex;
 `
 
+const selectDisplay = props =>
+  props.display || !props.hasCharacter ? 'inline-block' : 'none'
+
 export const Panel = styled.div`
   position: relative;
   margin: 10px;
@@ -12,8 +15,7 @@ export const Panel = styled.div`
   border: 1px solid gray;
   border-radius: 4px;
   transition-duration: 2s;
-  display: ${props =>
-    props.display || !props.hasCharacter ? 'inline-block' : 'none'};
+  display: ${selectDisplay};
   z-index: 100;
 `
 

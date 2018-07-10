@@ -1,9 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const slug = 'cat'
-
 export default class Cat extends React.Component {
+
+  /**
+   * [slug description]
+   * @type {string}
+   */
+  static slug='cat'
+
   /**
    * propTypes
    * @type {object}

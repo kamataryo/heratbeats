@@ -30,8 +30,6 @@ export default class AnimalPanel extends React.Component {
   constructor(props) {
     super(props)
     this.state = { display: false }
-    this.onShowEvent = this::this.onShowEvent
-    this.onHideEvent = this::this.onHideEvent
   }
 
   /**

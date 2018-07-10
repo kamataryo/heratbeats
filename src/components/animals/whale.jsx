@@ -1,12 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-export const slug = 'whale'
 
 /**
  * Whale svg wrapped component
  * @type {function}
  */
 export default class Whale extends React.Component {
+
+  /**
+   * [slug description]
+   * @type {string}
+   */
+  static slug =  'whale'
+
   /**
    * propTypes
    * @type {object}

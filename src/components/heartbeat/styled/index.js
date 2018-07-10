@@ -22,7 +22,7 @@ const _Heart = styled.div`
   height: ${props => props.size * 80}px;
   opacity: ${props => props.alpha};
   margin-right: 20px;
-  
+
   &:hover {
     cursor: ${props => (props.isPointer ? 'pointer' : 'auto')};
   }
@@ -34,7 +34,7 @@ const _Heart = styled.div`
     animation-timing-function: 1, 0, 0, 1;
     animation-iteration-count: infinite;
     animation-delay: ${props => props.delay / 1000}s;
-    
+
     content: '';
     position: absolute;
     transform: rotate(-45deg);
@@ -46,9 +46,9 @@ const _Heart = styled.div`
     selectHemoTypedAfterKeyframes(props.bloodHaemType, props.size)};
     animation-duration ${props => 60 / props.bpm}s;
     animation-timing-function: 1, 0, 0, 1;
-    animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
     animation-delay: ${props => props.delay / 1000}s;
-    
+
     content: '';
     position: absolute;
     transform: rotate(45deg);
