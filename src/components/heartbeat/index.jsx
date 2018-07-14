@@ -44,33 +44,22 @@ export default class Hearbeat extends React.Component {
    */
   constructor(props) {
     super(props)
-    // those state will be used to provide oscillation to heartbeats pulse.
-    this.state = { counter: 0, timerId: false }
-  }
 
-  /**
-   * componentWillMount
-   * @return {void}
-   */
-  componentWillMount() {
-    const timerId = setInterval(
-      () =>
-        this.setState(
-          update(this.state, {
-            counter: {
-              $set: this.state.counter + 1,
-            },
-          }),
-        ),
-      1000,
-    )
-    this.setState(
-      update(this.state, {
-        timerId: {
-          $set: timerId,
-        },
-      }),
-    )
+    // those state will be used to provide oscillation to heartbeats pulse.
+    this.state = {
+      counter: 0,
+      timerId: setInterval(
+        () =>
+          this.setState(
+            update(this.state, {
+              counter: {
+                $set: this.state.counter + 1,
+              },
+            }),
+          ),
+        1000,
+      ),
+    }
   }
 
   /**
@@ -85,12 +74,10 @@ export default class Hearbeat extends React.Component {
 
   /**
    * componentWillUnmount
+   * clear timer
    * @return {void}
    */
-  componentWillUnmount() {
-    // please stop
-    clearInterval(this.state.timerId)
-  }
+  componentWillUnmount = () => clearInterval(this.state.timerId)
 
   /**
    * render

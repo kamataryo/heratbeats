@@ -5,5 +5,6 @@ module.exports = {
   rules: {
     'declaration-colon-space-before': null,
     'color-hex-length': null,
+    'declaration-colon-newline-after': null,
   },
 }

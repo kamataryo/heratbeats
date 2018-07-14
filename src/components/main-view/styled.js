@@ -1,13 +1,13 @@
 import styled from 'styled-components'
+import { gray, paleGray } from 'colors'
 
 /**
  * main view wrap
  * @type {function}
  */
 export const Main = styled.main`
-  max-width: 640px;
+  width: 100%;
   margin: auto;
-  padding: 40px;
 `
 
 /**
@@ -15,6 +15,8 @@ export const Main = styled.main`
  * @type {function}
  */
 export const MainTitle = styled.h1`
+  background: ${gray};
+  color: ${paleGray};
   font-style: italic;
   font-size: 40px;
   font-weight: 100;
@@ -44,12 +46,9 @@ export const Button = styled.button`
   }
 `
 
-/**
- * wrapper for animal panels
- * @type {function}
- */
-export const AnimalsWrap = styled.div`
+export const Surface = styled.div`
+  z-index: 999;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 `

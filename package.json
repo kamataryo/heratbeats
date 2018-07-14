@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./bin/start.sh",
     "build": "./bin/build.sh",
-    "lint": "npm run lint:style && npm run lint:es",
+    "lint": "npm run lint:es",
     "lint:style": "stylelint --syntax scss './src/**/*.js' './src/**/*.jsx'",
     "lint:es": "eslint --cache --ext=jsx --ext=js .",
     "lint:prettier": "prettier-eslint \"./src/**/*.js\" \"./src/**/*.jsx\" \"./test/**/*.js\" \"./test/**/*.jsx\" --write",

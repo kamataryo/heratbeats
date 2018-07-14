@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 import { Router, Route } from 'react-router-dom'
 import store, { history } from 'store'
 import MainView from 'components/main-view/container'
+import TestView from 'components/test-view'
 
 /**
  * @return {function} App Container
@@ -18,7 +19,10 @@ const AppContainer = () => {
   return (
     <Provider store={ store }>
       <Router history={ history }>
-        <Route path="/" component={ MainView } exact />
+        <div>
+          <Route path="/" component={ MainView } exact />
+          <Route path="/test" component={ TestView } exact />
+        </div>
       </Router>
     </Provider>
   )

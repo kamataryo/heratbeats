@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default class Cat extends React.Component {
-
   /**
    * [slug description]
    * @type {string}
    */
-  static slug='cat'
+  static slug = 'cat'
 
   /**
    * propTypes
@@ -15,7 +14,7 @@ export default class Cat extends React.Component {
    */
   static propTypes = {
     scaleEnabled: PropTypes.bool.isRequired,
-    width: PropTypes.number.isRequired,
+    // width: PropTypes.number.isRequired,
   }
 
   /**

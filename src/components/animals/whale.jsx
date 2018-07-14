@@ -6,12 +6,11 @@ import PropTypes from 'prop-types'
  * @type {function}
  */
 export default class Whale extends React.Component {
-
   /**
    * [slug description]
    * @type {string}
    */
-  static slug =  'whale'
+  static slug = 'whale'
 
   /**
    * propTypes
@@ -19,7 +18,7 @@ export default class Whale extends React.Component {
    */
   static propTypes = {
     scaleEnabled: PropTypes.bool.isRequired,
-    width: PropTypes.number.isRequired,
+    // width: PropTypes.number.isRequired,
   }
 
   /**

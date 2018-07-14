@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AnimalPanel from '../animal-panel/container'
-import { Main, Button, MainTitle, AnimalsWrap } from './styled'
+import { Main, Surface } from './styled'
+import SkewedBackground from 'components/skewed-background'
+import { bgWhite, bgGray } from 'colors'
+
+// const bgColors = [bgAqua, bgGreen, bgGray, bgWhite, bgBrown,bgYellow]
+const bgColors = [bgGray, bgWhite]
 
 /**
  * main view of app
@@ -15,9 +20,6 @@ export default class MainView extends React.Component {
   static propTypes = {
     // stateProps
     animals: PropTypes.array.isRequired,
-    // dispatchProps
-    sortAscend: PropTypes.func.isRequired,
-    sortDescend: PropTypes.func.isRequired,
   }
 
   /**
@@ -27,7 +29,7 @@ export default class MainView extends React.Component {
    * @return {boolean}          should component update
    */
   shouldComponentUpdate() {
-    return true
+    return false
   }
   /**
    * render
@@ -37,29 +39,16 @@ export default class MainView extends React.Component {
     const {
       // stateProps
       animals,
-      // dispatchProps
-      sortAscend,
-      sortDescend,
     } = this.props
     return (
       <Main>
-        <MainTitle>{'HOW MUCH DO WE BEAT?'}</MainTitle>
-        <Button direction={ 'high' } onClick={ sortAscend }>
-          {'high'}
-        </Button>
-        <Button direction={ 'low' } onClick={ sortDescend }>
-          {'low'}
-        </Button>
-
-        <AnimalsWrap>
-          {animals.map((animal, index) => {
-            return (
-              <div key={ `animals-${index}-${animal.academic}` }>
-                <AnimalPanel animal={ animal } />
-              </div>
-            )
-          })}
-        </AnimalsWrap>
+        <SkewedBackground colors={ bgColors } slope={ 10 }>
+          {animals.map((animal, index) => (
+            <Surface key={ `animals-${index}-${animal.academic}` }>
+              <AnimalPanel animal={ animal } />
+            </Surface>
+          ))}
+        </SkewedBackground>
       </Main>
     )
   }
